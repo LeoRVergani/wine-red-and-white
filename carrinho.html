@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="assets/carrinho.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- VERIFIQUEM OS APONTAMENTOS FEITOS NA PÁGINA DE PRODUTOS QUANTO AO HEADER, POR FAVOR. -->
+    <header class="header">
+        <div>
+            <nav class="nav">
+                <img class="logo" src="img/logo.png" alt="Garrafa de vinho e uma taça">
+                <button class="hamburger"></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li>
+                        <form action="#" method="post">
+                            <label for="search-input" class="search-icon">
+                                <img class="lupa" src="img/lupa.svg" alt="Uma lupa"></label>
+                            <input type="text" class="search-input" id="search-input" required />
+                        </form>
+                    </li>
+                    <!--retirei o carrinho do header, pois não faz sentido ter carrinho na pagina de carrinho-->
+                    <li>
+                        <a href="#">
+                            <img class="icon" src="img/coração.svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usuario.html">
+                            <img class="icon" src="img/login.svg">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 id="principal">Seu Carrinho</h1>
+        <div class="content">
+            <!-- SE ATENTEM A IDENTAÇÃO, PESSOAL! -->
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--agrupa o conteudo do corpo na tabela-->
+                        <tr>
+                            <!--adicionando o produto-->
+                            <td>
+                                <div class="product">
+                                    <img src="img/item do carrinho - cabernet sauvignon 2.jpg" alt="vinho tinto">
+                                    <div class="Info">
+                                        <p class="name">Cabernet Sauvignon</p>
+                                        <p class="category">Vinho tinto</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="valor-primeiro">R$ 150</td>
+                            <td>
+                                <div class="qty">
+                                    <button id="subtrair">
+                                        <i class='bx bx-minus'></i>
+                                    </button>
+                                    <span id="contador">2</span>
+                                    <button id="adicionar">
+                                        <i class='bx bx-plus'></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td id="valor-subtotal-produto-primeiro">R$ 300</td>
+                            <td>
+                                <button class="delete">x</button>
+                            </td>
+                        </tr>
+                        <!--acabando a seção do primeiro produto-->
+
+                        <tr>
+                            <!--adicionando outro produto-->
+                            <td>
+                                <div class="product">
+                                    <!--engloba a imagem o titulo a quantidade e categoria-->
+                                    <img src="img/item do carrinho -Pinot Noir 2.jpg" alt="vinho tinto">
+                                    <div class="Info">
+                                        <p class="name">Pinot Noir</p>
+                                        <p class="category">Vinho tinto</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="valor-segundo">R$ 170</td>
+                            <td>
+                                <div class="qty">
+
+                                    <button id="subtrair1">
+                                        <i class='bx bx-minus'></i>
+                                    </button>
+                                    <span id="contador1">2</span>
+                                    <button id="adicionar1">
+                                        <i class='bx bx-plus'></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td id="valor-subtotal-produto-segundo">R$ 340</td>
+                            <td>
+                                <button class="delete">x</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <aside>
+                <!--separando o conteudo com aside, bloco com resumo da compra-->
+                <div class="box">
+                    <!--Caixa de resumo das compras-->
+                    <h2>Resumo das compras</h2>
+                    <div class="res">
+                        <span>Sub-Total</span>
+                        <span id="subtotal">R$ 640</span>
+                    </div>
+                    <div class="frete">
+                        <span>Frete</span>
+                        <span class="green">Gratuito</span>
+                    </div>
+                </div>
+                <div class="total">
+                    <span>Total </span>
+                    <span id="valor">R$ 640</span>
+                </div>
+                <button><a href="checkout.html">Finalizar Compra</button></a>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <!-- SUGIRO SUBSTITUIR DIV POR SECTION AQUI ABAIXO. -->
+        <div id="footer_content">
+            <section id="footer_contacts">
+                <img class="logo_redonda" src="img/logo_redonda.png">
+                <h3>Nossos Canais</h3>
+                <!-- PODEM UTILIZAR LI AQUI TAMBÉM EM VEZ DE DIV! -->
+                <div id="footer_social_media">
+                    <a href="#" class="footer_link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer_link" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer_link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="img/deMaior.png" class="footer_link" id="">
+                        <img id="menor_idade" src="img/menor_idade.png" alt="">
+                    </a>
+                </div>
+            </section>
+            <ul class="footer_list">
+                <li>
+                    <h3>Vinhos</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Vinhos Tintos</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Vinhos Brancos</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Vinhos Rosés</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Vinhos Espumantes</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Champagnes</a>
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li>
+                    <h3>Produtores</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Thibault Liger-Belair</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Stella di Campalto</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Régis & Sylvain</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Domaine Jean Fournier</a>
+                </li>
+                <li>
+                    <a href="#" class="footer_link">Domaine Pfister</a>
+                </li>
+                <!-- SE ATENTEM A IDENTAÇÃO, PESSOAL! -->
+            </ul>
+            <div class="footer_subscribe">
+                <h3>Alguma Dúvida?<br>como podemos ajudar você?</h3>
+                <p>Horários de atendimento: De segunda a segunda 09h as 22hs.</p>
+                <p><a href="conosco.html" class="footer_link">Trabalhe conosco</a></p>
+
+
+                <!-- INCLUIR A TAG FORM PARA ENGLOBAR ESSE INPUT. TAMBÉM SUBSTITUIR O BUTTON POR UM INPUT DO TIPO SUBMIT. -->
+                <!-- NESSE CASO, TAMBÉM ACREDITO QUE NÃO HAJA NECESSIDADE DESSA DIV AQUI ABAIXO. -->
+                <div id="input_group">
+                    <input type="email" name="" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- PREFIRAM USAR CLASSES DO QUE IDS, PESSOAL! -->
+        <div class="footer_copyright">
+            &#169
+            Grupo 02 - Red&White Todos os Direitos Reservados <br>
+            <img src="img/etiqueta_proibido_bebida_para_menor-1000x1000.png" alt="">
+        </div>
+    </footer>
+
+    <script src="scripts/carrinho.js"></script>
+</body>
+
+</html>
